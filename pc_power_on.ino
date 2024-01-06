@@ -1,6 +1,7 @@
 #define BLYNK_TEMPLATE_ID "TMPL6tViMuwR6"
 #define BLYNK_TEMPLATE_NAME "PC Power Control"
 #define BLYNK_AUTH_TOKEN "b3yRyPOjlew0QcWmb0AUUlZSCK8rHzyU"
+#define BLYNK_FIRMWARE_VERSION "0.2.2"
 
 #include <BlynkSimpleEsp8266.h>
 #include <ESP8266WiFi.h>
