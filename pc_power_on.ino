@@ -24,7 +24,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("Mode test update");
   Blynk.run();
   int button = digitalRead(button_pin);
   Serial.print("BUtton Input : "); Serial.println(button);
@@ -41,7 +40,6 @@ void loop() {
     Blynk.virtualWrite(V1, "OFF");
     Blynk.virtualWrite(V0, 0);
     Serial.println("Relay OFF");
-    delay(60000);
     digitalWrite(relay_pin, LOW);
   }
 }
@@ -63,6 +61,7 @@ BLYNK_WRITE(V1){
   }else{
     status = false;
     Serial.println("From Blynk Status False");
+    delay(60000);
   }
 }
 
