@@ -1,0 +1,1 @@
+curl "https://blynk.cloud/external/api/update?token=b3yRyPOjlew0QcWmb0AUUlZSCK8rHzyU&v1=OFF"
