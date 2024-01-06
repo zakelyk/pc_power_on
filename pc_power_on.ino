@@ -1,8 +1,7 @@
 #define BLYNK_TEMPLATE_ID "TMPL6tViMuwR6"
 #define BLYNK_TEMPLATE_NAME "PC Power Control"
 #define BLYNK_AUTH_TOKEN "b3yRyPOjlew0QcWmb0AUUlZSCK8rHzyU"
-#define BLYNK_FIRMWARE_VERSION "0.2.2"
-
+#define BLYNK_FIRMWARE_VERSION "0.0.0"
 #include <BlynkSimpleEsp8266.h>
 #include <ESP8266WiFi.h>
 
@@ -15,7 +14,7 @@ bool status;
 
 void setup() {
   // put your setup code here, to run once:
-  digitalWrite(relay_pin, LOW);
+  digitalWrite(relay_pin, HIGH);
   Serial.begin(9600);
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
   pinMode(relay_pin, OUTPUT);
@@ -33,7 +32,7 @@ void loop() {
   }
   breaker();
   if(status == true){
-    digitalWrite(relay_pin, HIGH);
+    digitalWrite(relay_pin, LOW);
     Blynk.virtualWrite(V1, "ON");
     Blynk.virtualWrite(V0, 1);
     Serial.println("Relay On");
@@ -41,7 +40,7 @@ void loop() {
     Blynk.virtualWrite(V1, "OFF");
     Blynk.virtualWrite(V0, 0);
     Serial.println("Relay OFF");
-    digitalWrite(relay_pin, LOW);
+    digitalWrite(relay_pin, HIGH);
   }
 }
 
